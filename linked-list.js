@@ -63,7 +63,15 @@ class LinkedList {
   }
 
   find(value) {
+    let index = 0;
+    let currentNode = this.currentNode;
     
+    while (currentNode !== null) {
+      if (currentNode.value === value) return index;
+
+      currentNode = currentNode.next;
+      index++;
+    }
   }
 
   toString() {
