@@ -26,13 +26,15 @@ class LinkedList {
   prepend(value) {
     let newNode = new Node(value);
 
-    this.head = newNode;
+    this.head = newNode; 
     
-    if (this.size === 0) this.tail = newNode;
-     
-    newNode.next = this.currentNode;
+    if (this.size !== 0) {
+      newNode.next = this.currentNode;
+    } else {
+      this.tail = newNode;
+    }
+    
     this.currentNode = newNode;
-
     this.size++;
   };
 
@@ -41,7 +43,7 @@ class LinkedList {
   }
 
   head() {
-    
+   return this.head;  
   }
 
   tail() {
