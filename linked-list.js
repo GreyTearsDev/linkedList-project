@@ -43,11 +43,11 @@ class LinkedList {
   }
 
   head() {
-   return this.head;  
+    return this.head;  
   }
 
   tail() {
-    
+    return this.tail; 
   }
 
   at(index) {
