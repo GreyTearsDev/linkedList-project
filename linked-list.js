@@ -18,7 +18,7 @@ class LinkedList {
   };
 
   size() {
-    return this.size();
+    return this.size;
   }
 
   head() {
