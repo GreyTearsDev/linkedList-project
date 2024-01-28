@@ -13,17 +13,27 @@ class LinkedList {
     
     if (this.size === 0) {
       this.head = newNode;
-      this.currentnewNode = newNode;
       this.tail = newNode;
+      this.currentNode = newNode;
     } else {
       this.currentNode.next = newNode;
+      this.currentNode = newNode;
     }
     
     this.size++;
   }
 
   prepend(value) {
+    let newNode = new Node(value);
+
+    this.head = newNode;
     
+    if (this.size === 0) this.tail = newNode;
+     
+    newNode.next = this.currentNode;
+    this.currentNode = newNode;
+
+    this.size++;
   };
 
   size() {
