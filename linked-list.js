@@ -87,7 +87,7 @@ class LinkedList {
   }
 
   contains(value) {
-    return this.find(value) === -1 ? false : true;
+    return this.find(value) === null ? false : true;
   }
 
   find(value) {
@@ -101,20 +101,33 @@ class LinkedList {
       index++;
     }
 
-    return -1;
+    return null;
   }
 
   toString() {
+    if (this.size === 0) return '';
     
+    let string = '';
+    let currentNode = this.head;
+    
+    while (currentNode !== null) {
+      string = string.concat(currentNode.value);
+      if (currentNode.next !== null) {
+        string = string.concat(' -> ');
+      }
+      currentNode = currentNode.next;
+    }
+    
+    return string
   }
 
   insertAt(value, index) {
     
   }
 
-  removeAt(index) (
+  removeAt(index) {
     
-  )
+  }
   
 }
 
