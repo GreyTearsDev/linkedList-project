@@ -122,8 +122,29 @@ class LinkedList {
   }
 
   insertAt(value, index) {
+    if (index === 0) {
+      this.prepend(value);
+      this.size++;
+      return true;
+    }
     
+    if (index === this.size || index > this.size) {
+      this.append(value);
+      this.size++;
+      return true;
+    } 
+
+    let newNode = new Node(value);
+    let theNodeBefore = this.at(index);
+    let theNodeAfter = this.at(index + 1);
+
+    theNodeBefore.next = newNode;
+    newNode.next = theNodeAfter;
+
+    this.size++;
+    return true;
   }
+  
 
   removeAt(index) {
     
