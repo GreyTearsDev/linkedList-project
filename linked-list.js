@@ -66,6 +66,7 @@ class LinkedList {
 
   pop() {
     if (this.size === 0) return false;
+
     let currentNode = this.head;
 
     if (this.size === 1) {
@@ -83,11 +84,10 @@ class LinkedList {
     this.tail = currentNode;
     this.size--;
     return true;
-     
   }
 
   contains(value) {
-    
+    return this.find(value) === -1 ? false : true;
   }
 
   find(value) {
@@ -100,6 +100,8 @@ class LinkedList {
       currentNode = currentNode.next;
       index++;
     }
+
+    return -1;
   }
 
   toString() {
