@@ -116,7 +116,7 @@ class LinkedList {
       currentNode = currentNode.next;
     }
     
-    return string
+    return string;
   }
 
   insertAt(value, index) {
@@ -126,7 +126,7 @@ class LinkedList {
       return true;
     }
     
-    if (index === this.listSize || index > this.listSize) {
+    if (index + 1 >= this.listSize) {
       this.append(value);
       this.listSize++;
       return true;
