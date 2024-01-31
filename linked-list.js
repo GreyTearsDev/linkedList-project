@@ -51,7 +51,7 @@ class LinkedList {
   }
 
   at(index) {
-    if (index < 0 || index >= this.listSize) return undefined;
+    if (index < 0 || index >= this.listSize) return null;
 
     let currentNode = this.head;
     
@@ -61,8 +61,6 @@ class LinkedList {
 
     return currentNode;
   }
-  
-  
 
   pop() {
     if (this.listSize === 0) return false;
