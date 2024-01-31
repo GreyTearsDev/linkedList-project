@@ -90,7 +90,7 @@ class LinkedList {
 
   find(value) {
     let index = 0;
-    let currentNode = this.currentNode;
+    let currentNode = this.head;
     
     while (currentNode !== null) {
       if (currentNode.value === value) return index;
