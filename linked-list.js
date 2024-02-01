@@ -65,12 +65,12 @@ class LinkedList {
     if (this.listSize === 0) {
       this.head = newNode;
       this.tail = newNode;
-      this.currentNode = newNode;
     } else {
-      this.currentNode.next = newNode;
-      this.currentNode = newNode;
+      this.tail.next = newNode;
+      this.tail = newNode;
     }
 
+    this.currentNode = newNode;
     this.listSize++;
   }
 
