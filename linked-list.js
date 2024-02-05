@@ -133,30 +133,31 @@ class LinkedList {
     return currentNode;
   }
 
-  /**
-   * Removes and returns the last node from the linked list.
-   * @returns {boolean} True if a node was successfully removed, false if the list is empty.
-   */
+/**
+ * Removes and returns the last node from the linked list.
+ * @returns {Node|boolean} The removed node if a node was successfully removed, or false if the list is empty.
+ */
   pop() {
-    if (this.listSize === 0) return false;
+   if (this.listSize === 0) return false;
 
     let currentNode = this.head;
+    let poppedNode;
 
     if (this.listSize === 1) {
-      this.head = null;
-      this.tail = null;
-      this.listSize--;
-      return true;
+        poppedNode = currentNode;
+        this.head = null;
+        this.listTail = null;
+    } else {
+        while (currentNode.next.next !== null) {
+            currentNode = currentNode.next;
+        }
+        poppedNode = currentNode.next;
+        currentNode.next = null;
+        this.listTail = currentNode;
     }
 
-    while (currentNode.next.next !== null) {
-      currentNode = currentNode.next;
-    }
-
-    currentNode.next = null;
-    this.tail = currentNode;
     this.listSize--;
-    return true;
+    return poppedNode;
   }
 
   /**
